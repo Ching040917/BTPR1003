@@ -1,0 +1,86 @@
+//Name: Ching Qing Yang
+//StudentID: B240035A
+//Batch: BoS24-A1
+//SubmissionDate: unknown/11/2024
+/*
+ Write a program that prompts the user to enter the number of students and each student’s name and score, and finally displays the name of the student with the highest and the name of the student with the lowest score. Use the next() method in the Scanner class to read a name, rather than using the nextLine() method.
+ Here is a sample run: 
+
+ 
+
+Enter the number of students: 5 
+
+Enter a student name: John 
+
+Enter a student score: 78 
+
+Enter a student name: Peter 
+
+Enter a student score: 45 
+
+Enter a student name: Jocelyn 
+
+Enter a student score: 98 
+
+Enter a student name: Mark 
+
+Enter a student score: 88 
+
+Enter a student name: Moses 
+
+Enter a student score: 99 
+
+
+The name of the student with highest score: Moses's score is 99.0. 
+
+The name of the student with lowest score: Peter’s score is 45.0.*/
+
+import java.util.Scanner;
+
+public class BTPR1003_2024C_Assignment3_B240035A {
+	public static void main(String[] args){
+		
+		//Create scanner
+		Scanner input = new Scanner(System.in);
+		
+		//Receive a number of student
+		System.out.print("Enter the number of student: ");
+		int numStudent = input.nextInt();
+		
+		//Receive a first student name and initial number of score 
+		System.out.print("\nEnter a student name: ");
+		String highestScoreStudent = input.next();
+        System.out.print("\nEnter a student score: ");
+        int highestScore = input.nextInt();
+        
+        //Set initial value froom the user input
+        String lowestScoreStudent = highestScoreStudent;
+        int lowestScore = highestScore;
+		
+		// a loop for user to input variable and name
+		for(int i=1 ; i<=numStudent ; i++) {
+			System.out.print("\nEnter a student name: ");
+			String name = input.next();
+			System.out.print("\nEnter a student score: ");
+			int score = input.nextInt();
+			
+			//Check if the score is new highest
+			if(score > highestScore) {
+				highestScore = score;
+				highestScoreStudent = name;
+			}
+			
+			//Check if the score is new lowest
+			if(score < lowestScore) {
+				lowestScore = score;
+				lowestScoreStudent = name;
+			}
+			
+		}
+		
+		//Display the result 
+		System.out.println("\n\nThe name of the student with highest score: " +  highestScoreStudent + "'s score is " + highestScore + ".0.");
+		System.out.println("\nThe name of the student with lowest score: " +  lowestScoreStudent + "'s score is " + lowestScore + ".0.");
+	}
+}
+
