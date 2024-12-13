@@ -1,7 +1,7 @@
-# Make sure to install the required packages before running the script:
-# pip install streamlit
-# pip install folium
-# pip install streamlit-folium
+Make sure to install the required packages before running the script:
+pip install streamlit
+pip install folium
+pip install streamlit-folium
 
 import streamlit as st
 import folium
